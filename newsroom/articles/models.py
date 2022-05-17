@@ -17,7 +17,7 @@ class Article(models.Model):
     views = models.IntegerField(default=0)
 
     def has_views(self):
-        return views > 0
+        return self.views > 0
 
     def __str__(self):
         return self.title
