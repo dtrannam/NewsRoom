@@ -1,10 +1,10 @@
 <h1>Hire a new writer</h1>
 
-<form action="{% url 'new_authors' %}" method="post">
+<form action="{% url 'created_author' %}" method="post">
     {% csrf_token %} 
     <label for="name"> Enter a name</label>
-    <input type="text">
+    <input type="text" id="name" name="name">
     <label for="email"> Enter an email</label>
-    <input type="email">
+    <input type="email" id="email" name="email">
     <input type="submit"></input>
 </form>

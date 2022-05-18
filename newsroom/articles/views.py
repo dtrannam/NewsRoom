@@ -34,6 +34,7 @@ def year(request, year):
     return HttpResponse("You are reviewing articles from %s" % year)
 
 def created_author(request):
-    b = Author(name="", email="")
+    print(request.POST)
+    b = Author(name=request.POST["name"], email=request.POST["email"])
     b.save()
-    return HttpResponseRedirect('authors')
+    return HttpResponseRedirect('/articles/authors/')
