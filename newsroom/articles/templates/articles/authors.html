@@ -1,0 +1,12 @@
+{% if authors %}
+    <h1>All Authors</h1>
+    <ul>
+    {% for a in authors %}
+        <li>{{a.name}} -- {{a.email}}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No articles made</p>
+
+
+{% endif %}
