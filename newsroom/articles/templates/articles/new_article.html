@@ -1,0 +1,18 @@
+<h1>Create a new Article</h1>
+
+<form action="{% url 'created_author' %}" method="post">
+    {% csrf_token %} 
+    <label for="title"> Enter a title</label>
+    <input type="text" id="title" name="title">
+    </br>
+    <label for="content"> Enter an content</label>
+    <textarea id="content" name="content"></textarea>
+    </br>
+    <h3>Select an Author</h3>
+    {% for author in authors %} 
+        </br>
+        <input type="radio" name="author" id="author{{author.id}}" value= {{author.id}}>
+        <label for="author{{author.id}}">{{author.name}}</label>
+    {% endfor %}
+    <input type="submit"></input>
+</form>

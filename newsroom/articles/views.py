@@ -14,6 +14,10 @@ def details(request, article_id):
 def new_authors(request):
     return render(request, 'articles/new_author.html')
 
+def new_articles(request):
+    authors = Author.objects.get_queryset()
+    return render(request, 'articles/new_article.html', {"authors": authors})
+
 def authors(request): 
     try:
         a = Author.objects.all()
